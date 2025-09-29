@@ -1,0 +1,34 @@
+    name: Build QMK firmware
+
+    on: [push, pull_request]
+
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+        container: ghcr.io/qmk/qmk_cli
+
+        steps:
+          - name: Checkout QMK Userspace
+            uses: actions/checkout@v4
+            with:
+              path: userspace
+
+          - name: Clone QMK Firmware
+            uses: actions/checkout@v4
+            with:
+              repository: qmk/qmk_firmware
+              path: qmk_firmware
+
+          - name: Setup QMK environment
+            run: |
+              qmk setup -H qmk_firmware --yes
+              qmk config userspace.path=userspace
+
+          - name: Compile firmware
+            run: qmk compile -kb ergokeeb/supersplit -km default
+
+          - name: Upload firmware artifact
+            uses: actions/upload-artifact@v4
+            with:
+              name: qmk-firmware
+              path: qmk_firmware/*.uf2 # Adjust path and extension as needed
