@@ -31,4 +31,4 @@
             uses: actions/upload-artifact@v4
             with:
               name: qmk-firmware
-              path: qmk_firmware/*.uf2 # Adjust path and extension as needed
+              path: qmk_firmware/ergokeeb_supersplit.uf2 # Adjust path and extension as needed
