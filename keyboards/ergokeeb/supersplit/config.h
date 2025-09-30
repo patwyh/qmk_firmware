@@ -1,68 +1,40 @@
-#ifndef CONFIG_H
-#define CONFIG_H
+#pragma once
 
 #include "config_common.h"
 
-/* Key matrix size */
-#define MATRIX_ROWS 12 // 6 rows per half, 12 total for split
-#define MATRIX_COLS 6  // 6 columns per half
+#define MASTER_LEFT  // Assume left half is USB master; change to #define MASTER_RIGHT if needed
 
-/* Key matrix pins */
-#define MATRIX_ROW_PINS { GP09, GP08, GP07, GP06, GP05, GP04 }
+// Matrix configuration
+#define MATRIX_ROWS 6
+#define MATRIX_COLS 6
+#define MATRIX_ROW_PINS { GP9, GP8, GP7, GP6, GP5, GP4 }
 #define MATRIX_COL_PINS { GP22, GP23, GP24, GP25, GP26, GP27 }
-#define MATRIX_ROW_PINS_RIGHT { GP09, GP08, GP07, GP06, GP05, GP04 }
-#define MATRIX_COL_PINS_RIGHT { GP22, GP23, GP24, GP25, GP26, GP27 }
+#define DIODE_DIRECTION COL2ROW  // Adjust to ROW2COL if your diodes are reversed
 
-/* Split keyboard specific options */
-#define SOFT_SERIAL_PIN GP12  // Serial communication pin for split halves
-#define SPLIT_HAND_PIN GP13   // Optional: Pin to determine handedness (if used)
-#define SERIAL_USART_FULL_DUPLEX
-#define SERIAL_USART_TX_PIN GP12
+// Split serial communication
+#define SOFT_SERIAL_PIN GP12
 
-/* I2C for OLED */
+// I2C for OLED
 #define I2C_DRIVER I2CD1
-#define I2C1_SDA_PIN GP02
-#define I2C1_SCL_PIN GP03
+#define I2C1_SDA_PIN GP2
+#define I2C1_SCL_PIN GP3
 
-/* SPI for Cirque trackpad */
+// SPI for Cirque trackpad
 #define SPI_DRIVER SPID0
-#define SPI_SCK_PIN GP01
+#define SPI_SCK_PIN GP1
 #define SPI_MISO_PIN GP18
 #define SPI_MOSI_PIN GP16
-#define POINTING_DEVICE_CS_PIN GP19
-#define CIRQUE_PINNACLE_DATA_READY_PIN GP00
-#define CIRQUE_PINNACLE_BUTTON_PINS { GP10, GP11, GP20 }
+#define CIRQUE_PINNACLE_SPI_CS_PIN GP19  // SS pin
+#define POINTING_DEVICE_CS_PIN CIRQUE_PINNACLE_SPI_CS_PIN
+#define CIRQUE_PINNACLE_DATA_READY_PIN GP0  // DR pin
 
-/* LED configuration */
+// Optional: Adjust Cirque settings
+#define CIRQUE_PINNACLE_SPI_DIVISOR 8
+#define CIRQUE_PINNACLE_TAP_ENABLE
+// #define CIRQUE_PINNACLE_ATTENUATION EXTREG__TRACK_ADCCONFIG_ATTENUATE_10P  // Uncomment if sensitivity adjustment needed
+
+// LED indicator (assuming caps lock, active low)
 #define LED_CAPS_LOCK_PIN GP14
-#define LED_PIN_ON_STATE 1
+#define LED_PIN_ON_STATE 0
 
-/* Debounce settings */
-#define DEBOUNCE 5
-
-/* Bootmagic Lite key configuration */
-#define BOOTMAGIC_LITE_ROW 0
-#define BOOTMAGIC_LITE_COLUMN 0
-#define BOOTMAGIC_LITE_ROW_RIGHT 6
-#define BOOTMAGIC_LITE_COLUMN_RIGHT 0
-
-/* Split keyboard settings */
-#define SPLIT_KEYBOARD yes
-#define SPLIT_TRANSPORT_MIRROR
-#define SPLIT_LAYER_STATE_ENABLE
-#define SPLIT_MODS_ENABLE
-#define SPLIT_OLED_ENABLE
-
-/* Pointing device configuration */
-#define POINTING_DEVICE_ENABLE
-#define POINTING_DEVICE_DRIVER cirque_pinnacle_spi
-
-/* OLED settings */
-#define OLED_ENABLE
-#define OLED_DRIVER SSD1306
-#define OLED_TRANSPORT i2c
-
-/* RGB Matrix is not used, but define to avoid warnings */
-#define RGB_MATRIX_ENABLE no
-
-#endif
+// Trackpad buttons (GP10, GP11, GP20) can be added to keymap.c as custom keys if not handled by Cirque firmware
