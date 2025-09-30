@@ -27,6 +27,18 @@
           - name: Compile firmware
             run: qmk compile -kb crkbd/rev4_1/standard -km default
 
+          - name: List compiled files
+            run: |
+              ls -la qmk_firmware/
+              find . -name "*.uf2"  # Debug: Find all UF2 files
+    
+          - name: Verify UF2 file exists
+            run: |
+              if [ ! -f qmk_firmware/*.uf2 ]; then
+                echo "Error: No UF2 file found"
+                exit 1
+              fi
+
           - name: Upload firmware artifact
             uses: actions/upload-artifact@v4
             with:
