@@ -1,6 +1,6 @@
 #pragma once
 
-#include "config_common.h"
+//#include "config_common.h"
 
 #define MASTER_LEFT  // Assume left half is USB master; change to #define MASTER_RIGHT if needed
 
@@ -9,6 +9,8 @@
 #define MATRIX_COLS 6
 #define MATRIX_ROW_PINS { GP9, GP8, GP7, GP6, GP5, GP4 }
 #define MATRIX_COL_PINS { GP22, GP23, GP24, GP25, GP26, GP27 }
+#define MATRIX_ROW_PINS_RIGHT { GP9, GP8, GP7, GP6, GP5, GP4 }
+#define MATRIX_COL_PINS_RIGHT { GP22, GP23, GP24, GP25, GP26, GP27 }
 #define DIODE_DIRECTION COL2ROW  // Adjust to ROW2COL if your diodes are reversed
 
 // Split serial communication
