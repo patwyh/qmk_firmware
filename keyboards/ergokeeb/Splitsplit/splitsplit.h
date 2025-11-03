@@ -9,9 +9,6 @@
 #define MATRIX_ROW_PINS { GP9, GP8, GP7, GP6, GP5, GP4 }
 #define MATRIX_COL_PINS { GP22, GP23, GP24, GP25, GP26, GP27 }
 
-/* COL2ROW or ROW2COL */
-#define DIODE_DIRECTION COL2ROW
-
 /* Split keyboard */
 #define SOFT_SERIAL_PIN GP12  // TX pin for split half communication
 #define SPLIT_USB_DETECT

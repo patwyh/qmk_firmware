@@ -1,15 +1,11 @@
 #pragma once
 
+//#define EE_HANDS
+#define MASTER_LEFT //Left is connected USB
+
 /* Key matrix size (total for split: 12 rows x 6 cols) */
 #define MATRIX_ROWS 12
 #define MATRIX_COLS 6
-
-/* Keyboard pins */
-#define MATRIX_ROW_PINS { GP9, GP8, GP7, GP6, GP5, GP4 }
-#define MATRIX_COL_PINS { GP22, GP23, GP24, GP25, GP26, GP27 }
-
-/* COL2ROW or ROW2COL */
-#define DIODE_DIRECTION COL2ROW
 
 /* Debounce reduces chatter (unintended double-presses) */
 #define DEBOUNCE 5
