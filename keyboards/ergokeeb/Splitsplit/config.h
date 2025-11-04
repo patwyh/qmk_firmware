@@ -20,26 +20,26 @@
 #define SPLIT_USB_TIMEOUT 2000  // Timeout for USB detection in split mode
 
 /* I2C for peripherals (e.g., OLED display) */
-#define I2C_DRIVER I2CD1
-#define I2C1_SCL_PIN GP3
-#define I2C1_SDA_PIN GP2
+// #define I2C_DRIVER I2CD1
+// #define I2C1_SCL_PIN GP3
+// #define I2C1_SDA_PIN GP2
 
 /* Pointing device (Cirque Pinnacle trackpad in SPI mode) */
 //#define POINTING_DEVICE_DRIVER cirque_pinnacle_spi
 #define SPI_DRIVER SPID0
-#define SPI_SCK_PIN GP1
-#define SPI_MISO_PIN GP18
-#define SPI_MOSI_PIN GP16
-#define POINTING_DEVICE_CS_PIN GP19  
-#undef CIRQUE_PINNACLE_DIAMETER_MM
-#define CIRQUE_PINNACLE_DIAMETER_MM 23
-//#define CIRQUE_PINNACLE_CLOCK_PIN GP1
-//#define CIRQUE_PINNACLE_MISO_PIN GP18
-//#define CIRQUE_PINNACLE_MOSI_PIN GP16
+// #define SPI_SCK_PIN GP1
+// #define SPI_MISO_PIN GP18
+// #define SPI_MOSI_PIN GP16
+// #define POINTING_DEVICE_CS_PIN GP19  
+#define CIRQUE_PINNACLE_DIAMETER_MM 35
+
+#define CIRQUE_PINNACLE_CLOCK_PIN GP1
+#define CIRQUE_PINNACLE_MISO_PIN GP18
+#define CIRQUE_PINNACLE_MOSI_PIN GP16
 //#define CIRQUE_PINNACLE_CS_PIN GP19
 //#define CIRQUE_PINNACLE_NCS_PIN GP15
 //#define CIRQUE_PINNACLE_DR_PIN GP0
-//#define CIRQUE_PINNACLE_SPI_CS_PIN GP19  // Corrected: Use SPI-specific CS pin (formerly CIRQUE_PINNACLE_CS_PIN)
+#define CIRQUE_PINNACLE_SPI_CS_PIN GP19  // Corrected: Use SPI-specific CS pin (formerly CIRQUE_PINNACLE_CS_PIN)
 
 
 /* Enable basic features */
