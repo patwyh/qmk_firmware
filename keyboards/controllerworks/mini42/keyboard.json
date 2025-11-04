@@ -120,7 +120,6 @@
             {"flags": 1, "matrix": [6, 5], "x": 224, "y": 41}
           ]
     },
-    "community_layouts": ["split_3x6_3"],
     "layouts": {
         "LAYOUT_split_3x6_3": {
             "layout": [
