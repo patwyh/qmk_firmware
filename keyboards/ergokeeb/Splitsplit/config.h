@@ -20,9 +20,9 @@
 #define SPLIT_USB_TIMEOUT 2000  // Timeout for USB detection in split mode
 
 /* I2C for peripherals (e.g., OLED display) */
-#define I2C_DRIVER I2CD1
-#define I2C1_SCL_PIN GP3
-#define I2C1_SDA_PIN GP2
+// #define I2C_DRIVER I2CD1
+// #define I2C1_SCL_PIN GP3
+// #define I2C1_SDA_PIN GP2
 
 /* Pointing device (Cirque Pinnacle trackpad in SPI mode) */
 //#define POINTING_DEVICE_DRIVER cirque_pinnacle_spi

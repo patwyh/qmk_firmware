@@ -6,6 +6,10 @@
 
 #define RP2040_MCUCONF
 
+#include_next <mcuconf.h>
+
+#undef RP_SPI_USE_SPI0
+
 /*
  * HAL driver system settings.
  */
