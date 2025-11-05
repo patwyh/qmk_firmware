@@ -31,7 +31,7 @@
 #define SPLIT_POINTING_ENABLE
 
 // Pointing device is on the right split.
-#define POINTING_DEVICE_RIGHT
+#define POINTING_DEVICE_LEFT
 
 #define POINTING_DEVICE_DEBUG   //debug
 
