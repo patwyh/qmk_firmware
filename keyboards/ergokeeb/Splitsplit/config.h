@@ -26,6 +26,13 @@
 
 /* Pointing device (Cirque Pinnacle trackpad in SPI mode) */
 //#define POINTING_DEVICE_DRIVER cirque_pinnacle_spi
+
+// Enable use of pointing device on slave split.
+#define SPLIT_POINTING_ENABLE
+
+// Pointing device is on the right split.
+#define POINTING_DEVICE_RIGHT
+
 #define SPI_DRIVER SPID0
 #define SPI_SCK_PIN GP1
 #define SPI_MISO_PIN GP18
