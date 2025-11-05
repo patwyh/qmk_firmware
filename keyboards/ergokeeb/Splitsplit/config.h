@@ -33,6 +33,8 @@
 // Pointing device is on the right split.
 #define POINTING_DEVICE_RIGHT
 
+#define POINTING_DEVICE_DEBUG   //debug
+
 #define SPI_DRIVER SPID0
 #define SPI_SCK_PIN GP1
 #define SPI_MISO_PIN GP18
