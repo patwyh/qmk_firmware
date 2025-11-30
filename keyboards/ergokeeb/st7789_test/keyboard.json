@@ -1,0 +1,27 @@
+{
+    "keyboard_name": "splitsplit",
+    "manufacturer": "ergokeeb",
+    "maintainer": "ergokeeb",
+    "description": "ergonomic keyboard with RP2040",
+    "processor": "RP2040",
+    "bootloader": "rp2040",
+    "url":"https://ergokeeb.com/",
+    "features": {
+        "command": false,
+        "console": false,
+        "mousekey": false
+    },
+    "usb": {
+        "vid": "0xFEED",
+        "pid": "0x0002",
+        "device_version": "1.0.0"
+    },
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                {"matrix": [0, 0], "x": 0.0, "y": 0.0, "w": 1.0}
+
+            ]
+        }
+    }
+}
